@@ -1,12 +1,9 @@
 " Indent automatically depending on filetype
 filetype indent on
-set autoindent
+set smartindent
 
 " turn on lin numbering. Turn it off with "set nonu"
 set number
-
-" Set syntax on
-syntax on
 
 " Case insensitve search
 set ic
@@ -33,10 +30,12 @@ set smarttab
 " Always use spaces instead of tabl characters
 set expandtab
 
-" Move .swp files out of project directory
-set backupdir=~/temp/
-set directory=~/temp/
-silent execute '!del "~/temp/*~"'
+" Put some space around the cursor
+set scrolloff=5
+
+" Fix trailing whitespace so they are periods
+set list
+set listchars=eol: ,trail:.
 
 " Change colorscheme from default to solarized
 syntax enable
@@ -49,7 +48,4 @@ map <leader>n :NERDTree <CR>
 map <C-t> :tabnew <CR>
 
 " Plugins
-
-" Control P
-" :help ctrlp.txt
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+execute pathogen#infect()
