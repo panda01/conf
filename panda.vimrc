@@ -35,13 +35,7 @@ set scrolloff=5
 
 " Fix trailing whitespace so they are periods
 set list
-set listchars=eol: ,trail:.
-
-" Change colorscheme from default to solarized
-syntax enable
-set background=dark
-colorscheme solarized
-
+set listchars=eol: ,trail:. " on mac eol opt+space
 
 " Key maps
 map <leader>n :NERDTree <CR>
@@ -49,3 +43,9 @@ map <C-t> :tabnew <CR>
 
 " Plugins
 execute pathogen#infect()
+
+" Change colorscheme from default to solarized
+syntax enable
+set background=dark
+colorscheme solarized
+
