@@ -14,7 +14,6 @@ set hls
 " Wrap text inside of beng on one line
 set lbr
 
-
 "Size of tab hard stop
 set tabstop=2
 
@@ -49,3 +48,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" Automatically create .backup directory, writable by the group.
+if filewritable("~/.backup") && ! filewritable("~/.backup")
+  silent execute '!umask 002; mkdir ~/.backup'
+  set backupdir=~/.backup
+  set directory=~/.backup
+endif
