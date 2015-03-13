@@ -5,8 +5,8 @@ set smartindent
 " turn on lin numbering. Turn it off with "set nonu"
 set number
 
-" Case insensitve search
-set ic
+" Case smart search
+set smartcase
 
 " Highlight search
 set hls
@@ -32,6 +32,10 @@ set expandtab
 " Put some space around the cursor
 set scrolloff=5
 
+" No eol file at the end
+set binary
+set noeol
+
 " Fix trailing whitespace so they are periods
 set list
 set listchars=eol: ,trail:. " on mac eol opt+space
@@ -39,6 +43,7 @@ set listchars=eol: ,trail:. " on mac eol opt+space
 " Key maps
 map <leader>n :NERDTree <CR>
 map <C-t> :tabnew <CR>
+nmap <D-f> :Ack<space>
 
 " Plugins
 execute pathogen#infect()
@@ -49,8 +54,8 @@ set background=dark
 colorscheme solarized
 
 " Automatically create .backup directory, writable by the group.
-if filewritable("~/.backup") && ! filewritable("~/.backup")
+if filewritable("~/") && ! filewritable("~/.backup")
   silent execute '!umask 002; mkdir ~/.backup'
-  set backupdir=~/.backup
-  set directory=~/.backup
 endif
+set backupdir=~/.backup
+set directory=~/.backup
