@@ -1,3 +1,6 @@
+" w'ere using VI Improved, use it then. Just a conf since this should happen auto
+set nocompatible
+
 " Search while I type, with highlighting, only using case if i do
 set smartcase incsearch hls
 
