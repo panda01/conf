@@ -1,44 +1,26 @@
+" Search while I type, with highlighting, only using case if i do
+set smartcase incsearch hls
+
+" Shift/Tab
 " Indent automatically depending on filetype
 filetype indent on
-set smartindent
+" improve tab functionality
+set smartindent smarttab expandtab
+" Size of tab
+set tabstop=2 shiftwidth=2 softtabstop=2
 
-" turn on lin numbering. Turn it off with "set nonu"
+" Randomness
+" Always show some kind of status
+set laststatus=2
+" turn on line numbering. Turn it off with set nonu"
 set number
 
-" Case smart search
-set smartcase
-
-" Highlight search
-set hls
-
-" Wrap text inside of beng on one line
-set lbr
-
-"Size of tab hard stop
-set tabstop=2
-
-" Size of indent
-set shiftwidth=2
-
-" A combination of space and tabs are used to simulate tab stops at a width other than the hard tab stop
-set softtabstop=2
-
-" make "tab" insert indents instead of tabs at the beginning of a line
-set smarttab
-
-" Always use spaces instead of tabl characters
-set expandtab
-
 " Put some space around the cursor
-set scrolloff=5
-
-" No eol file at the end
-set binary
-set noeol
+set scrolloff=2
 
 " Fix trailing whitespace so they are periods
 set list
-set listchars=eol: ,trail:. " on mac eol opt+space
+set listchars=eol: ,trail:.
 
 " Key maps
 map <leader>n :NERDTree <CR>
@@ -57,5 +39,4 @@ colorscheme solarized
 if filewritable("~/") && ! filewritable("~/.backup")
   silent execute '!umask 002; mkdir ~/.backup'
 endif
-set backupdir=~/.backup
-set directory=~/.backup
+set backupdir=~/.backup directory=~/.backup
