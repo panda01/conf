@@ -5,6 +5,12 @@ echo copied the .vimrc
 cp panda.tmux.conf ~/.tmux.conf
 echo copied tmux.conf
 
+cp panda.bashrc ~/.bashrc
+echo copied bashrc
+
+# Make dirs for the vimrc
+mkdir ~/.backup
+
 # install pathogen
 echo making bundle and auto load folders
 mkdir -p ~/.vim/autoload ~/.vim/bundle

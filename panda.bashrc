@@ -1,0 +1,2 @@
+
+[[ $TERM != "screen" ]] && exec tmux
