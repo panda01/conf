@@ -23,19 +23,21 @@ set visualbell errorbells ruler
 
 " Joining the darkside...
 set mouse=a
-set ttymouse=xterm2
 
 " Put some space around the cursor
 set scrolloff=2
 
 " Fix trailing whitespace so they are periods
 set list
-set listchars=eol: ,trail:.
+set listchars=eol: ,tab:\|\ ,precedes:\ ,trail:.
+
+" Setup Persistent undo
+set undofile
+set undodir=~/.undo
 
 " Key maps
 map <leader>n :NERDTreeToggle <CR>
 map <C-t> :tabnew <CR>
-nmap <D-f> :Ack<space>
 map <C-/> <Plug>NERDComToggleComment!
 
 " Plugins
@@ -56,5 +58,7 @@ set backupdir=~/.backup directory=~/.backup
 " CtrlP Fixes
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+
+let g:ctrlp_working_path_mode = 'a'
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|optimize'
