@@ -8,11 +8,15 @@ set incsearch
 set hls
 
 " Shift/Tab
-filetype plugin on
+filetype plugin indent on
+
+
+" vim.wikia.com/wiki/indenting_source_code
 " improve tab functionality
-set smartindent smarttab expandtab
+set smartindent smarttab noexpandtab
+
 " Size of tab
-set tabstop=2 shiftwidth=2 softtabstop=2
+set tabstop=4 shiftwidth=4
 
 " Randomness
 " Always show some kind of status
@@ -26,6 +30,9 @@ set mouse=a
 
 " Put some space around the cursor
 set scrolloff=2
+
+" Put some space before the end of a wrapping line
+set wrapmargin=2
 
 " Fix trailing whitespace so they are periods
 set list
