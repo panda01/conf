@@ -18,9 +18,20 @@ set smartindent smarttab noexpandtab
 " Size of tab
 set tabstop=4 shiftwidth=4
 
+" Stop auto line wrapping
+set textwidth=0
+
 " Randomness
 " Always show some kind of status
 set laststatus=2
+set statusline=
+set statusline+=%f
+set statusline+=%r
+set statusline+=%m
+set statusline+=%=
+set statusline+=%y
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 " turn on line numbering. Turn it off with set nonu"
 set number
 set visualbell errorbells ruler
@@ -53,7 +64,8 @@ execute pathogen#infect()
 " Change colorscheme from default to solarized
 syntax enable
 set background=dark
-colorscheme solarized
+set termguicolors
+colorscheme NeoSolarized
 
 " Automatically create .backup directory, writable by the group.
 if filewritable("~/") && ! filewritable("~/.backup")
