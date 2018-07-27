@@ -18,7 +18,9 @@ set smartindent smarttab noexpandtab
 " Size of tab
 set tabstop=4 shiftwidth=4
 
-" Stop auto line wrapping
+" no vertical scroll
+set wrap
+let &showbreak = '>>> '
 set textwidth=0
 
 " Randomness
@@ -32,22 +34,22 @@ set statusline+=%=
 set statusline+=%y
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
-" turn on line numbering. Turn it off with set nonu"
+" turn on line numbering.
 set number
 set visualbell errorbells ruler
 
 " Joining the darkside...
 set mouse=a
 
-" Put some space around the cursor
+" Put some vertical space around the cursor
 set scrolloff=2
-
-" Put some space before the end of a wrapping line
-set wrapmargin=2
 
 " Fix trailing whitespace so they are periods
 set list
-set listchars=eol: ,tab:\|\ ,precedes:\ ,trail:.
+set listchars=eol: ,tab:\|\ ,precedes:<,extends:>,trail:.
+
+" Make non text more visible
+highlight NonText guifg=#4a4a59 guibg=#4a4a59
 
 " Setup Persistent undo
 set undofile
