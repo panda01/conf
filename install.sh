@@ -1,12 +1,16 @@
 # Attempt to move the vimrc file
-cp panda.vimrc ~/.config/nvim/init.vim
+ln panda.vimrc ~/.config/nvim/init.vim
 echo copied the .vimrc
 
-cp panda.tmux.conf ~/.tmux.conf
-echo copied tmux.conf
+ln panda.tmux.conf ~/.tmux.conf
+echo linked tmux.conf
 
-cp panda.bashrc ~/.bashrc
-echo copied bashrc
+# FIXME Not sure what's wrong here, disable for now
+# ln panda.bashrc ~/.bashrc
+# echo linked bashrc
+
+ln panda.gitconfig ~/.gitconfig
+echo linked git config
 
 # Make dirs for the vimrc
 mkdir ~/.backup
@@ -31,5 +35,7 @@ echo cloning nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
 echo cloning superTab
 git clone https://github.com/ervandew/supertab.git
+mkdir ~/.config/nvim/colors
+cd ~/.config/nvim/colors/
 echo cloning solarized
 git clone https://github.com/altercation/vim-colors-solarized.git

@@ -1,0 +1,12 @@
+
+[color]
+	ui = true
+
+[core]
+	editor = nvim
+[help]
+	autoCorrect = 6
+
+[user]
+	email = khasan222@gmail.com
+	name = Khalah Jones-Golden
