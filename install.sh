@@ -39,3 +39,4 @@ mkdir ~/.config/nvim/colors
 cd ~/.config/nvim/colors/
 echo cloning solarized
 git clone https://github.com/altercation/vim-colors-solarized.git
+ln vim-colors-solarized/colors/solarized.vim ~/.config/nvim/colors/solarized.vim

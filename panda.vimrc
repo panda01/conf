@@ -67,7 +67,7 @@ execute pathogen#infect()
 syntax enable
 set background=dark
 set termguicolors
-colorscheme NeoSolarized
+colorscheme solarized
 
 " Automatically create .backup directory, writable by the group.
 if filewritable("~/") && ! filewritable("~/.backup")
