@@ -5,7 +5,7 @@
 [core]
 	editor = nvim
 [help]
-	autoCorrect = 6
+	autoCorrect = 20
 
 [user]
 	email = khasan222@gmail.com
