@@ -36,7 +36,9 @@ git clone https://github.com/scrooloose/nerdtree.git
 echo cloning superTab
 git clone https://github.com/ervandew/supertab.git
 mkdir ~/.config/nvim/colors
-cd ~/.config/nvim/colors/
 echo cloning solarized
 git clone https://github.com/altercation/vim-colors-solarized.git
 ln vim-colors-solarized/colors/solarized.vim ~/.config/nvim/colors/solarized.vim
+echo cloning syntax plugins
+git clone https://github.com/exu/pgsql.vim.git
+git clone https://github.com/mxw/vim-jsx.git

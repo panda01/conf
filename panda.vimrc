@@ -19,8 +19,7 @@ set smartindent smarttab noexpandtab
 set tabstop=4 shiftwidth=4
 
 " no vertical scroll
-set wrap
-let &showbreak = '>>> '
+set nowrap
 set textwidth=0
 
 " Randomness
@@ -46,7 +45,7 @@ set scrolloff=2
 
 " Fix trailing whitespace so they are periods
 set list
-set listchars=eol: ,tab:\|\ ,precedes:<,extends:>,trail:.
+set listchars=eol: ,tab:\|\ ,trail:.
 
 " Make non text more visible
 highlight NonText guifg=#4a4a59 guibg=#4a4a59
@@ -66,7 +65,7 @@ execute pathogen#infect()
 " Change colorscheme from default to solarized
 syntax enable
 set background=dark
-set termguicolors
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " Automatically create .backup directory, writable by the group.
