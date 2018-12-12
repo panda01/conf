@@ -42,3 +42,4 @@ ln vim-colors-solarized/colors/solarized.vim ~/.config/nvim/colors/solarized.vim
 echo cloning syntax plugins
 git clone https://github.com/exu/pgsql.vim.git
 git clone https://github.com/mxw/vim-jsx.git
+git clone https://github.com/leafgarland/typescript-vim.git
