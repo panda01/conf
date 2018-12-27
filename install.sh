@@ -6,8 +6,8 @@ ln panda.tmux.conf ~/.tmux.conf
 echo linked tmux.conf
 
 # FIXME Not sure what's wrong here, disable for now
-# ln panda.bashrc ~/.bashrc
-# echo linked bashrc
+ln panda.bashrc ~/.bashrc
+echo linked bashrc
 
 ln panda.gitconfig ~/.gitconfig
 echo linked git config
@@ -30,7 +30,7 @@ cd ~/.config/nvim/bundle
 echo cloning ack
 git clone https://github.com/mileszs/ack.vim.git
 echo cloning ctrlp
-git clone https://github.com/kien/ctrlp.vim.git
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
 echo cloning nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
 echo cloning superTab
