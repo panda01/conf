@@ -1,15 +1,15 @@
 # Attempt to move the vimrc file
-ln panda.vimrc ~/.config/nvim/init.vim
+ln -s panda.vimrc ~/.config/nvim/init.vim
 echo copied the .vimrc
 
-ln panda.tmux.conf ~/.tmux.conf
+ln -s panda.tmux.conf ~/.tmux.conf
 echo linked tmux.conf
 
 # FIXME Not sure what's wrong here, disable for now
-ln panda.bashrc ~/.bashrc
+ln -s panda.bashrc ~/.bashrc
 echo linked bashrc
 
-ln panda.gitconfig ~/.gitconfig
+ln -s panda.gitconfig ~/.gitconfig
 echo linked git config
 
 # Make dirs for the vimrc
