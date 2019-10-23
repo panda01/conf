@@ -1,15 +1,21 @@
+sudo apt install neovim
 # Attempt to move the vimrc file
-ln -s panda.vimrc ~/.config/nvim/init.vim
-echo copied the .vimrc
+mkdir -p ~/.config/nvim
+touch ~/.config/nvim/init.vim
+ln -f panda.vimrc ~/.config/nvim/init.vim
+echo linked the .vimrc
 
-ln -s panda.tmux.conf ~/.tmux.conf
+touch ~/.tmux.conf
+ln -f panda.tmux.conf ~/.tmux.conf
 echo linked tmux.conf
 
 # FIXME Not sure what's wrong here, disable for now
-ln -s panda.bashrc ~/.bashrc
+touch ~/.bashrc
+ln -f panda.bashrc ~/.bashrc
 echo linked bashrc
 
-ln -s panda.gitconfig ~/.gitconfig
+touch ~/.gitconfig
+ln -f panda.gitconfig ~/.gitconfig
 echo linked git config
 
 # Make dirs for the vimrc
