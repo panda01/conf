@@ -3,6 +3,7 @@
 [color]
 	ui = true
 
+# More changes again!!!
 [core]
 	editor = nvim
 [help]
