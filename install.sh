@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt install neovim
 # Attempt to move the vimrc file
 mkdir -p ~/.config/nvim
