@@ -1,12 +1,7 @@
-Install [Ack](http://beyondgrep.com/install/)
+# Khalah's Quick config
 
-Requirements:
-git
-curl
+Meant to be simple, and have the panda01 up and running on any machine fast (tested on ubuntu)
 
-Then simply run
-```
-sh install.sh
-```
+Might need to install neovim separately. [For ubuntu 14.04](https://gist.github.com/humorless/e79174c0f72355dc64ac7280ca2d2b58)
 
-Might need sudo for dir creation
+Run `./install.sh` in order to install all dependencies
