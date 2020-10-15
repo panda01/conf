@@ -12,3 +12,6 @@
 [user]
 	email = khasan222@gmail.com
 	name = Khalah Jones-Golden
+
+[push]
+	default = current
