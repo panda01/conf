@@ -11,7 +11,6 @@ touch ~/.tmux.conf
 ln -f panda.tmux.conf ~/.tmux.conf
 echo linked tmux.conf
 
-# FIXME Not sure what's wrong here, disable for now
 touch ~/.bashrc
 ln -f panda.bashrc ~/.bashrc
 echo linked bashrc
@@ -35,8 +34,6 @@ echo downloaded pathogen
 # cd into directory and download all of the plugins
 echo downloading git repos for plugins
 cd ~/.config/nvim/bundle
-echo cloning ack
-git clone https://github.com/mileszs/ack.vim.git
 echo cloning ctrlp
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
 echo cloning nerdtree
