@@ -13,8 +13,11 @@ Be sure to change your .gitconfig to actually be your name and email!
 this config is meant for a user of neovim, git, and tmux, although tmux isn't set to work out of the box.
 
 ### neovim
-Uses 
+Uses
 [nerd tree](https://github.com/preservim/nerdtree) as an explorer in nvim
+
 [CtrlP](https://github.com/kien/ctrlp.vim) for a fuzzy finder
+
 [SuperTab](https://github.com/ervandew/supertab) for autocompletion
+
 [Solarized](https://github.com/altercation/vim-colors-solarized) as a colorscheme
