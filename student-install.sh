@@ -3,8 +3,9 @@
 sudo apt-get install curl
 
 curl -LSso nvim.appimage https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
+sudo cp nvim.appimage /usr/local/bin/nvim
+sudo chmod +x /usr/local/bin/nvim
+
 
 
 sudo apt-get install git
