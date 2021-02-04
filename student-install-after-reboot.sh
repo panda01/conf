@@ -1,13 +1,18 @@
 #!/bin/bash
 
+sudo apt-get install curl
+
+curl -LSso nvim.appimage https://github.com/neovim/neovim/releases/download/v0.4.4/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
+
 sudo apt-get install git
 echo installed git
 
 touch ~/.gitconfig
 ln -f student.gitconfig ~/.gitconfig
 echo linked git config
-
-sudo snap install nvim --classic
 
 mkdir -p ~/.config/nvim
 touch ~/.config/nvim/init.vim
