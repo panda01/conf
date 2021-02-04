@@ -4,6 +4,9 @@ Meant to be simple, and have the panda01 up and running on any machine fast (tes
 
 Might need to install neovim separately. [For ubuntu 14.04](https://gist.github.com/humorless/e79174c0f72355dc64ac7280ca2d2b58)
 
+## Holberton students Install
+run `./student-install-1.sh` wait for reboot, then run `./student-install-after-reboot.sh`
+
 ## Install
 Run `./install.sh` in order to install all dependencies
 

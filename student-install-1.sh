@@ -7,3 +7,5 @@ sudo apt-get install snapd
 
 # says i should restart here
 sudo snap install nvim --classic
+
+sudo reboot
