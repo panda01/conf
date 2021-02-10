@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt install ack-grep
 sudo apt install neovim
 # Attempt to move the vimrc file
 mkdir -p ~/.config/nvim
@@ -48,3 +49,4 @@ echo cloning syntax plugins
 git clone https://github.com/exu/pgsql.vim.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/mileszs/ack.vim.git

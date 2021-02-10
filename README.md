@@ -7,6 +7,8 @@ Might need to install neovim separately. [For ubuntu 14.04](https://gist.github.
 ## Holberton students Install
 run `./student-install` after this nvim should be installed, along with helpful plugins, and settings
 
+to open up the directory listing (NERDTREE) use `\n`
+
 ## Install
 Run `./install.sh` in order to install all dependencies
 
