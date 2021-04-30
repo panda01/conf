@@ -15,7 +15,7 @@ Run `./install.sh` in order to install all dependencies
 Be sure to change your .gitconfig to actually be your name and email!
 
 ## About this config
-this config is meant for a user of neovim, git, and tmux, although tmux isn't set to work out of the box.
+this config is meant for a user of neovim, git. meant to be simple and easy.
 
 ### neovim
 Uses

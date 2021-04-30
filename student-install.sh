@@ -19,9 +19,6 @@ mkdir -p ~/.config/nvim
 touch ~/.config/nvim/init.vim
 ln -f panda.vimrc ~/.config/nvim/init.vim
 
-# Make dirs for the vimrc
-mkdir ~/.backup
-
 # install pathogen, plugin manager
 echo making bundle and auto load folders
 mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle

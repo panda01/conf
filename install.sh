@@ -20,9 +20,6 @@ touch ~/.gitconfig
 ln -f panda.gitconfig ~/.gitconfig
 echo linked git config
 
-# Make dirs for the vimrc
-mkdir ~/.backup
-
 # install pathogen
 echo making bundle and auto load folders
 mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle
