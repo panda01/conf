@@ -1,4 +1,5 @@
 " w'ere using VI Improved, use it then. Just a conf since this should happen auto
+" asdfsfa
 set nocompatible
 
 " Search while I type, with highlighting, only using case if i do
