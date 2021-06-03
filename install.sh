@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install ack-grep
-sudo apt install neovim
+sudo snap install nvim
 # Attempt to move the vimrc file
 mkdir -p ~/.config/nvim
 touch ~/.config/nvim/init.vim
