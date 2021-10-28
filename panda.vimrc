@@ -14,7 +14,7 @@ filetype plugin indent on
 
 " vim.wikia.com/wiki/indenting_source_code
 " improve tab functionality
-set smartindent smarttab noexpandtab
+set cindent
 
 " Size of tab
 set tabstop=4 shiftwidth=4

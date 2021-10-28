@@ -1,31 +1,35 @@
 #!/bin/bash
 
-sudo apt install ack-grep
-sudo snap install nvim
+unameS="$(uname -s)"
+case "${unameS}" in
+	Darwin*)
+		echo "doing OSX install for ack and neovim"
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		brew install -v ack
+		brew install -v neovim
+	;;
+	Linux*)
+		echo "doing Ubuntu install for ack and neovim"
+		sudo apt install ack-grep
+		sudo snap install nvim
+	;;
+esac
+
+
 # Attempt to move the vimrc file
 mkdir -p ~/.config/nvim
-touch ~/.config/nvim/init.vim
-ln -f panda.vimrc ~/.config/nvim/init.vim
-echo linked the .vimrc
+ln -vf panda.vimrc ~/.config/nvim/init.vim
 
-touch ~/.tmux.conf
-ln -f panda.tmux.conf ~/.tmux.conf
-echo linked tmux.conf
+ln -vf panda.tmux.conf ~/.tmux.conf
 
-touch ~/.bashrc
-ln -f panda.bashrc ~/.bashrc
-echo linked bashrc
+ln -vf panda.bashrc ~/.bashrc
 
-touch ~/.gitconfig
-ln -f panda.gitconfig ~/.gitconfig
-echo linked git config
+ln -vf panda.gitconfig ~/.gitconfig
 
 # install pathogen
 echo making bundle and auto load folders
-mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle
-echo made autoload and bundle dir in ~/.config/nvim
+mkdir -vp ~/.config/nvim/autoload ~/.config/nvim/bundle
 
-echo attempting to download pathogen
 curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 echo downloaded pathogen
 
@@ -33,17 +37,18 @@ echo downloaded pathogen
 echo downloading git repos for plugins
 cd ~/.config/nvim/bundle
 echo cloning ctrlp
-git clone https://github.com/ctrlpvim/ctrlp.vim.git
+git clone -v https://github.com/ctrlpvim/ctrlp.vim.git
 echo cloning nerdtree
-git clone https://github.com/scrooloose/nerdtree.git
+git clone -v https://github.com/scrooloose/nerdtree.git
 echo cloning superTab
-git clone https://github.com/ervandew/supertab.git
+git clone -v https://github.com/ervandew/supertab.git
 mkdir ~/.config/nvim/colors
 echo cloning solarized
-git clone https://github.com/altercation/vim-colors-solarized.git
-ln vim-colors-solarized/colors/solarized.vim ~/.config/nvim/colors/solarized.vim
+git clone -v https://github.com/altercation/vim-colors-solarized.git
+ln -vf  vim-colors-solarized/colors/solarized.vim ~/.config/nvim/colors/solarized.vim
+echo cloning ack
+git clone -v https://github.com/mileszs/ack.vim.git
 echo cloning syntax plugins
-git clone https://github.com/exu/pgsql.vim.git
-git clone https://github.com/mxw/vim-jsx.git
-git clone https://github.com/leafgarland/typescript-vim.git
-git clone https://github.com/mileszs/ack.vim.git
+git clone -v https://github.com/exu/pgsql.vim.git
+git clone -v https://github.com/mxw/vim-jsx.git
+git clone -v https://github.com/leafgarland/typescript-vim.git
