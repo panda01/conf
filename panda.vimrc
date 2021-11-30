@@ -60,8 +60,27 @@ map <leader>n :NERDTreeToggle <CR>
 map <C-t> :tabnew <CR>
 map <C-/> <Plug>NERDComToggleComment!
 
+" Automatically create .backup directory, writable by the group.
+if filewritable("~/") && ! filewritable("~/.backup")
+  silent execute '!umask 002; mkdir ~/.backup'
+endif
+set backupdir=~/.backup directory=~/.backup
+
 " Plugins
-execute pathogen#infect()
+call plug#begin('~/.config/nvim/bundle')
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mileszs/ack.vim'
+Plug 'exu/pgsql.vim'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+
+call plug#end()
+
 
 " Change colorscheme from default to solarized
 syntax enable
@@ -69,12 +88,11 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-" Automatically create .backup directory, writable by the group.
-if filewritable("~/") && ! filewritable("~/.backup")
-  silent execute '!umask 002; mkdir ~/.backup'
-endif
-set backupdir=~/.backup directory=~/.backup
-
+" LSP
+" FIXME need to have npm installed so I can install eslint automatically
+lua << EOF
+require'lspconfig'.eslint.setup{}
+EOF
 
 " CtrlP Fixes
 let g:ctrlp_max_files=0
