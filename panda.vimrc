@@ -67,6 +67,8 @@ map <C-t> :tabnew <CR>
 nmap <Tab> gt
 " shift tab to go back through tabs
 nmap <S-Tab> gT
+" something messing up yank in normal mode
+nmap Y Y
 
 " Automatically create .backup directory, writable by the group.
 if filewritable("~/") && ! filewritable("~/.backup")
