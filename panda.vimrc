@@ -55,6 +55,11 @@ highlight NonText guifg=#4a4a59 guibg=#4a4a59
 set undofile
 set undodir=~/.undo
 
+" ignore certain directories
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*/dist/*,*/lib/*
+set wildignore+=*/reports/*,*/coverage/*,*/cypress-coverage/*
+
 " Key maps
 map <leader>n :NERDTreeToggle <CR>
 map <C-t> :tabnew <CR>
