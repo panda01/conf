@@ -22,6 +22,8 @@ esac
 mkdir -p ~/.config/nvim
 ln -vf panda.vimrc ~/.config/nvim/init.vim
 
+ln -vf panda.ackrc ~/.ackrc
+
 ln -vf panda.tmux.conf ~/.tmux.conf
 
 ln -vf panda.bashrc ~/.bashrc

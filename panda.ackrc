@@ -1,0 +1,5 @@
+--ignore-dir=cypress-coverage
+--ignore-dir=lib
+--ignore-dir=test-results
+--ignore-dir=coverage
+--ignore-file=ext:snap
