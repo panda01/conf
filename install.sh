@@ -11,7 +11,9 @@ case "${unameS}" in
 	Linux*)
 		echo "doing Ubuntu install for ack and neovim"
 		sudo apt install ack-grep
-		sudo snap install nvim
+        sudo add-apt-repository ppa:neovim-ppa/unstable
+        sudo apt-get update
+		sudo apt-get install neovim
 	;;
 esac
 
