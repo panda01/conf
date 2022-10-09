@@ -2,19 +2,20 @@
 
 unameS="$(uname -s)"
 case "${unameS}" in
-	Darwin*)
-		echo "doing OSX install for ack and neovim"
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		brew install -v ack
-		brew install -v neovim
-	;;
-	Linux*)
-		echo "doing Ubuntu install for ack and neovim"
-		sudo apt install ack-grep
+    Darwin*)
+        echo "doing OSX install for ack and neovim"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        brew install -v --cask iterm2
+        brew install -v ack
+        brew install -v neovim
+        ;;
+    Linux*)
+        echo "doing Ubuntu install for ack and neovim"
+        sudo apt install ack-grep
         sudo add-apt-repository ppa:neovim-ppa/unstable
         sudo apt-get update
-		sudo apt-get install neovim
-	;;
+        sudo apt-get install neovim
+        ;;
 esac
 
 
@@ -25,8 +26,6 @@ ln -vf panda.vimrc ~/.config/nvim/init.vim
 ln -vf panda.ackrc ~/.ackrc
 
 ln -vf panda.tmux.conf ~/.tmux.conf
-
-ln -vf panda.bashrc ~/.bashrc
 
 ln -vf panda.gitconfig ~/.gitconfig
 

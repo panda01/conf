@@ -57,18 +57,8 @@ set undodir=~/.undo
 
 " ignore certain directories
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-set wildignore+=*/dist/*,*/lib/*
+set wildignore+=*/dist/*,*/lib/*,*/node_modules/*
 set wildignore+=*/reports/*,*/coverage/*,*/cypress-coverage/*
-
-" Key maps
-map <leader>n :NERDTreeToggle <CR>
-map <C-t> :tabnew <CR>
-" Tab to go forward through tabs
-nmap <Tab> gt
-" shift tab to go back through tabs
-nmap <S-Tab> gT
-" something messing up yank in normal mode
-nmap Y Y
 
 " Automatically create .backup directory, writable by the group.
 if filewritable("~/") && ! filewritable("~/.backup")
@@ -81,15 +71,16 @@ call plug#begin('~/.config/nvim/bundle')
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'altercation/vim-colors-solarized'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'mileszs/ack.vim'
 Plug 'exu/pgsql.vim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'bmatcuk/stylelint-lsp'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
@@ -103,9 +94,10 @@ call plug#end()
 
 " Change colorscheme from default to solarized
 syntax enable
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme nordfox
+
+" ctrlp should show me hidden files
+let g:ctrlp_show_hidden = 1
 
 " LSP
 " FIXME need to have npm installed so I can install eslint automatically
@@ -117,7 +109,6 @@ vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<C
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -138,7 +129,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>TroubleToggle:vim.lsp.buf.references()<CR>', opts)
 end
 
 -- Setup nvim-cmp.
@@ -188,7 +179,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver' }
+local servers = { 'tsserver', 'eslint' }
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, lsp in pairs(servers) do
@@ -224,12 +215,24 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
   {silent = true, noremap = true}
 )
 
+-- nvim-tree
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
 EOF
 
-" CtrlP Fixes
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
 
-let g:ctrlp_working_path_mode = 'a'
+"
+" Key maps
+map <leader>n :NvimTreeToggle <CR>
+map <C-t> :tabnew <CR>
+" Tab to go forward through tabs
+nmap <Tab> gt
+" shift tab to go back through tabs
+nmap <S-Tab> gT
+" something messing up yank in normal mode
+nmap Y Y
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|optimize'
